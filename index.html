@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+
+
+
+
+<link rel="shortcut icon" type="image/png" href="https://avatars0.githubusercontent.com/u/35040938?s=200&v=4"/>
+ <meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="description" content="Swtches and buttons galore!">
+<meta name="keywords" content="awesome,switch,button,nice,code,click,fast,cool,lol,codepen,boop,beep,tap,js,html,css">    
+
+<style>
+h1{
+  font-weight: normal;
+  font-family: 'Raleway', sans-serif;
+
+}
+body{
+background: #1f2021;
+}
+.big{
+  font-size: 100px;
+  height: 70%;
+  width: 100%;
+  background-image: url('https://avatars0.githubusercontent.com/u/35040938?s=200&v=4');
+  background-repeat: no-repeat;
+  background-color:black;
+  background-position:center;
+background-attachment: fixed;
+ color:white;
+    background-size: 50% 70%;
+    padding:0;
+    margin:0;
+
+    
+    left:0;
+top:0;
+   
+    
+}
+
+//button
+body
+{
+	padding: 50px;
+}
+
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: relative;
+	padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+}
+
+.blue
+{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+.red
+{
+	background-color: #E74C3C;
+	border-bottom: 5px solid #BD3E31;
+	text-shadow: 0px -2px #BD3E31;
+}
+
+.green
+{
+	background-color: #82BF56;
+	border-bottom: 5px solid #669644;
+	text-shadow: 0px -2px #669644;
+}
+
+.yellow
+{
+	background-color: #F2CF66;
+	border-bottom: 5px solid #D1B358;
+	text-shadow: 0px -2px #D1B358;
+}
+
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
+//switch
+/* Some color definitions */
+/* Some styling */
+body {
+  background: #442242;
+  color: white;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+sup {
+  color: #AF5D6C;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Important switch stuff */
+input[type=checkbox].switch + label {
+  width: 100px;
+  height: 50px;
+  background: lightgray;
+  display: inline-block;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+}
+input[type=checkbox].switch + label:before, input[type=checkbox].switch + label:after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 100%;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  transition: all .2s;
+}
+input[type=checkbox].switch + label:after {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+input[type=checkbox].switch + label:before {
+  background: lightgray;
+  transform: scale3d(0, 0, 1);
+}
+input[type=checkbox].switch + label:active:before {
+  transform: scale3d(3, 3, 1);
+  opacity: 0;
+}
+
+input[type=checkbox].switch {
+  display: none;
+}
+input[type=checkbox].switch:checked + label {
+  background: rgba(3, 155, 229, 0.5);
+}
+input[type=checkbox].switch:checked + label:before, input[type=checkbox].switch:checked + label:after {
+  left: 40px;
+  background: #039be5;
+}
+input[type=checkbox].switch:disabled + label {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+input[type=checkbox].switch.green {
+  display: none;
+}
+input[type=checkbox]{
+}
+input[type=checkbox].switch.green:checked + label {
+  background: rgba(4, 196, 52, 0.5);
+}
+input[type=checkbox].switch.green:checked + label:before, input[type=checkbox].switch.green:checked + label:after {
+  background: #04c434;
+}
+
+input[type=checkbox].switch.red {
+  display: none;
+}
+input[type=checkbox].switch.red:checked + label {
+  background: rgba(244, 67, 54, 0.5);
+}
+input[type=checkbox].switch.red:checked + label:before, input[type=checkbox].switch.red:checked + label:after {
+  background: #f44336;
+}
+label{color: white}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+<div class='big'><br><br><br><br></div><br><table align='center'><tr> <td><a href="buttons" class="action-button shadow animate blue" >Buttons</a></td><td><a href='switches'><input type="checkbox" id="switch2" class='switch blue' checked/>
+  <label for="switch2" onclick='window.location="switches"'><h1>Switches</h1></label></a>
+</td> </tr></table>
+<br>
+
+
+<title>Save The Lingonberry Sauce</title>
+
