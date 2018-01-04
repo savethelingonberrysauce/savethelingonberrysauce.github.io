@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <link rel="shortcut icon"  href="https://avatars0.githubusercontent.com/u/35040938?s=200&v=4" />
+  
+  <title>Naughty Or Nice Toggle</title>
+  
+  
+  
+  
+      <style>
+      * {
+    transition: all 1s ease-in-out;
+}
+body {
+    margin: 0;
+    background: #722e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+p,a{
+   color:white; 
+    
+}
+a{
+    font-weight:bold;
+}
+h1 {
+    color: #eff0d8;
+    text-align: center;
+    font-size: 3em;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    font-weight: 200;
+}
+.slider {
+    width: 110px;
+    height: 50px;
+    background: #eff0d8;
+    position: relative;
+    border-radius: 50px;
+    padding: 0 10px;
+}
+
+.ball {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    background: #e73b3b;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    margin-left: 3px;
+    transition: all 0.7s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    left: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.right {
+    left: 79px;
+    background: #608c60;
+}
+
+.naughty {
+    color: #e73b3b;
+}
+.nice {
+    color: #608c60;
+}
+
+.active {
+    transition: all 0.6s ease-in-out;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.green {
+    background: #1e441e;
+}
+
+    </style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+
+  <h1>Have you been <span class='naughty active'>naughty</span> or <span class='nice'>nice</span> this year?</h1>
+<div class='slider'>
+    <div class="ball"></div>
+</div>
+<p>Credit to <a href='https://codepen.io/beeg/'>Bryan Smith</a></p>
+  
+  
+  
+
+    <script >
+      let ball = document.querySelector('.ball');
+let naughtyText = document.querySelector('.naughty');
+let niceText = document.querySelector('.nice');
+let body = document.querySelector('body');
+ball.addEventListener('click', ()=> {
+    ball.classList.toggle('right');
+    naughtyText.classList.toggle('active')
+    niceText.classList.toggle('active');
+    body.classList.toggle('green')
+})
+    </script>
+
+
+
+  
+  
+
+</body>
+
+</html>
+ 
