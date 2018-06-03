@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <title> CSS Minion switchs - Save the Lingonberry Sauce</title>
+  
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <style>
+      /***** Global *****/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix {
+  clear: both;
+  margin: 40px;
+}
+
+body {
+  background-color: #eee;
+  text-align: center;
+  padding-top: 30px;
+}
+
+h1 {
+  color: #402E1D;
+  margin-bottom: 30px;
+}
+
+/***** Switcher *****/
+.minion-switcher {
+  width: 120px;
+  height: 60px;
+  display: inline-block;
+  position: relative;
+}
+.minion-switcher .check {
+  width: 120px;
+  height: 60px;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  outline: 0;
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.minion-switcher .btn {
+  background: #ffcd01;
+  width: 120px;
+  height: 60px;
+  border-radius: 120px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  box-shadow: 0 1px #C2BEAD;
+}
+.minion-switcher .btn:before, .minion-switcher .btn:after {
+  font-family: sans-serif;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.minion-switcher .btn:before {
+  content: "\2713";
+  left: 22px;
+  font-size: 26px;
+}
+.minion-switcher .btn:after {
+  content: "X";
+  right: 22px;
+  font-size: 0;
+}
+.minion-switcher.reverse .btn:before {
+  font-size: 0;
+}
+.minion-switcher.reverse .btn:after {
+  font-size: 26px;
+}
+.minion-switcher.reverse .eye {
+  left: 3px;
+  right: auto;
+}
+.minion-switcher.reverse .eye .eye-inner .eye-brown {
+  margin-right: 10px;
+  margin-top: 61%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.minion-switcher.reverse .eye .eye-cover {
+  top: 0;
+}
+
+.eye {
+  width: 54px;
+  height: 54px;
+  border-radius: 54px;
+  border: 7px solid #878787;
+  overflow: hidden;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.eye .eye-back {
+  width: 44px;
+  height: 44px;
+  border-radius: 440px;
+  margin: -2px;
+  background-color: #fff;
+  -webkit-transform: scaleY(0.75);
+  -ms-transform: scaleY(0.75);
+  transform: scaleY(0.75);
+  position: absolute;
+}
+.eye .eye-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.eye .eye-inner .eye-brown {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-color: #402E1D;
+  border-radius: 12px;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.eye .eye-inner .eye-brown:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: #000;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+.eye .eye-inner .eye-brown:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: #fff;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+.eye .eye-cover {
+  width: 60px;
+  height: 20px;
+  margin-right: -10px;
+  background-color: #ffcd01;
+  position: absolute;
+  top: -20px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.check:checked + .btn:before {
+  font-size: 0;
+}
+.check:checked + .btn:after {
+  font-size: 26px;
+}
+.check:checked + .btn .eye {
+  right: 62px;
+}
+.check:checked + .btn .eye .eye-inner .eye-brown {
+  margin-right: 10px;
+  margin-top: 61%;
+}
+.check:checked + .btn .eye .eye-cover {
+  top: 0;
+}
+.reverse .check:checked + .btn:before {
+  font-size: 26px;
+}
+.reverse .check:checked + .btn:after {
+  font-size: 0;
+}
+.reverse .check:checked + .btn .eye {
+  left: 62px;
+}
+.reverse .check:checked + .btn .eye .eye-inner .eye-brown {
+  margin-right: 0;
+  margin-top: 50%;
+}
+.reverse .check:checked + .btn .eye .eye-cover {
+  top: -20px;
+}
+
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+
+  <h1>Minion Switches </h1>
+<div class="minion-switcher">
+	<input type="checkbox" class="check">
+	<div class="btn">
+		<div class="eye">
+			<div class="eye-back"></div>
+			<div class="eye-inner">
+				<div class="eye-brown"></div>
+			</div>
+			<div class="eye-cover"></div>
+		</div>
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="minion-switcher reverse">
+	<input type="checkbox" class="check">
+	<div class="btn">
+		<div class="eye">
+			<div class="eye-back"></div>
+			<div class="eye-inner">
+				<div class="eye-brown"></div>
+			</div>
+			<div class="eye-cover"></div>
+		</div>
+	</div>
+</div>
+<p>Credit to <a href='https://codepen.io/mohab-elhamzawy/#'>Mohab El-Hamzawy</a></p>
+    <script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  
+  
+
+    <script >
+      /*
+
+Pure CSS Minion switch button
+inspired from: https://goo.gl/KVrUol
+
+Email: mohabelhamzawy@gmail.com
+*/
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+</body>
+
+</html>
+ 
