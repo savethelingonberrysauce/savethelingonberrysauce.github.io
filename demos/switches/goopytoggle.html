@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+  <title>Gooey toggle - Save The Lingonberry Sauce</title>
+  
+<link rel="shortcut icon" type="image/png" href="https://avatars0.githubusercontent.com/u/35040938?s=200&v=4"/>
+ <meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="description" content="Gooey Toggle at Save the Lingonberry Sauce">
+<meta name="keywords" content="awesome,switch,button,nice,code,click,fast,cool,lol,codepen,boop,beep,tap,js,html,css">    
+
+  
+  
+  
+      <style>
+      body {
+  align-items: center;
+  background: #708fd4;
+  display: flex;
+  font-family: 'Inconsolata', monospace;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.filter {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  filter: url('#gooeyness');
+  height: 80px;
+  justify-content: center;
+  position: relative;
+  width: 150px;
+}
+
+.bar {
+  background: #5d78b4;
+  position: absolute;
+  width: 100px;
+  height: 11px;
+  transition: background 250ms linear;
+}
+
+.knob {
+  background: #5d78b4;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  transform: translateX(-30px);
+  transform-origin: 50%;
+  transition: transform 250ms linear, background 250ms linear;
+}
+
+.toggle.active .knob {
+  animation: Activate 250ms both linear;
+/*   background: #ddd;
+  transform: translateX(30px);
+ */}
+
+.toggle.inactive .knob {
+  animation: Inactivate 250ms both linear;
+/*   background: #ddd;
+  transform: translateX(30px);
+ */}
+
+.toggle.active .bar {
+  background: #ddd;
+}
+
+@keyframes Activate {
+  0% { background: #5d78b4; transform: translateX(-30px); }
+  50% { transform: translateX(0px) scaleX(1.2) scaleY(.7); }
+  90% { transform: translateX(24px) scaleX(0.7) scaleY(.94); }
+  100% { background: #ddd; transform: translateX(30px); }
+}
+
+@keyframes Inactivate {
+  0% { background: #ddd; transform: translateX(30px); }
+  50% { transform: translateX(0px) scaleX(1.2) scaleY(.7); }
+  90% { transform: translateX(-24px) scaleX(0.7) scaleY(.94); }
+  100% { background: #5d78b4; transform: translateX(-30px); }
+}
+
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+
+  <svg class="filter" version="1.1">
+  <defs>
+    <filter id="gooeyness">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooey" />
+      <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
+    </filter>
+  </defs>
+</svg>
+<div class="toggle">
+  <div class="bar"></div>
+  <div class="knob"></div>
+</div>
+    <script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  
+  
+
+    <script >
+      let toggle = document.querySelector('.toggle');
+let backoff = false;
+toggle.addEventListener('click', function(e) {
+  if (backoff) return;
+  setTimeout(() => backoff = false, 250);
+  backoff = true;
+  if (!toggle.classList.contains('active')) {
+    toggle.classList.remove('inactive');
+    toggle.classList.add('active');
+  } else {
+    toggle.classList.add('inactive');
+    toggle.classList.remove('active');
+  }
+});
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+</body>
+
+</html>
+ 
